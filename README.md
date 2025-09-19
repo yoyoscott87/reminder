@@ -4,4 +4,4 @@
 
 
 
-setx REMINDER_SA_PATH "C:\Users\%USERNAME%\AppData\Roaming\ReminderApp\service_account.json"
+setx REMINDER_SA_PATH "C:\Users\%USERNAME%\AppData\Roaming\ReminderApp\credentials.json"
