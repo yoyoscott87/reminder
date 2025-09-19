@@ -11,8 +11,8 @@ public class MainApp {
         	Platform.setImplicitExit(false);
         });
 
-        String spreadsheetId = "1-u3kssi6gWN9HahcOY5vdDHDLGP3xiNOFtQWU8cbVw4";
-        String range = "工作表1!A2:C";  
+        String spreadsheetId = "1mAScrsD0NGbhgE9c-5yCf2ZchgO0R_U4ugo6myzYEe4";
+        String range = "reminder!A2:D";  
 
         var sheets = SheetsService.createService();
         var checker = new ReminderChecker(sheets, spreadsheetId, range);
