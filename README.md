@@ -1,6 +1,6 @@
 # reminder
 
-###  設定環境變數
+##  設定環境變數
 
 
 
@@ -8,3 +8,9 @@ setx REMINDER_SA_PATH "C:\Users\%USERNAME%\AppData\Roaming\ReminderApp\credentia
 
 
 將google服務帳戶用同一個 credentials處理，將google sheet新增工作表放提醒事項
+
+
+## 下載exe打包器
+
+
+https://github.com/wixtoolset/wix3/releases/tag/wix3141rtm
