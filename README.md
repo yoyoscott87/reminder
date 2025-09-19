@@ -12,10 +12,16 @@ setx REMINDER_SA_PATH "C:\Users\%USERNAME%\AppData\Roaming\ReminderApp\credentia
 
 ## 執行jar檔
 
-java -jar target\reminder-app-1.0-SNAPSHOT-shaded.jar  
+java -jar target\reminder-app-1.0-SNAPSHOT.jar  
 
 
 ## 下載exe打包器
 
 
 https://github.com/wixtoolset/wix3/releases/tag/wix3141rtm
+
+
+## 執行打包
+
+
+jpackage --input target --name ReminderApp --main-jar reminder-app-1.0-SNAPSHOT.jar --main-class com.example.reminder.MainApp --type msi --win-menu --win-shortcut --icon C:\intern\reminder\icon.ico
