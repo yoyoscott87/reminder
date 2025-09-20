@@ -48,22 +48,17 @@ public class ReminderChecker {
             String task = row.get(1).toString();
             String dayStr = (row.size() > 2) ? row.get(2).toString().trim().toUpperCase() : "ALL";
             String status = (row.size() > 3) ? row.get(3).toString() : "";
-
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/M/d HH:mm");
             try {
                 // 🟢 一次性提醒 (格式 yyyy/MM/dd HH:mm) → 不檢查星期
                 if (timeStr.contains("/")) {
-                    LocalDateTime remindTime = LocalDateTime.parse(
-                            timeStr, DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm"));
+                    LocalDateTime remindTime = LocalDateTime.parse(timeStr, formatter);
                     long diff = Duration.between(remindTime, now).toMinutes();
-                    if (Math.abs(diff) <= 1 && !"已提醒".equals(status)) {
-                        ReminderPopup.show("📌 " + task);
 
-                        // 更新狀態 → D 欄
-                        sheets.spreadsheets().values().update(
-                                spreadsheetId,
-                                "reminder!D" + (i + 2),
-                                new ValueRange().setValues(List.of(List.of("已提醒")))
-                        ).setValueInputOption("RAW").execute();
+                    String key = "ONCE-" + remindTime.toString();
+                    if (Math.abs(diff) <= 1 && !remindedToday.contains(key)) {
+                        ReminderPopup.show("📌 (一次性) " + task);
+                        remindedToday.add(key);
                     }
                 }
                 // 🟢 每日提醒 (格式 HH:mm) → 要檢查星期
