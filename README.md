@@ -11,7 +11,6 @@ setx REMINDER_SA_PATH "C:\Users\User\AppData\Roaming\ReminderApp\credentials.jso
 記得重新下載 json，並放在電腦安全的資料夾裡
 
 
-將google服務帳戶用同一個 credentials處理，將google sheet新增工作表放提醒事項
 
 
 ## 執行jar檔
