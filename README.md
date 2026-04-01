@@ -14,6 +14,8 @@ setx REMINDER_SA_PATH "C:\Users\User\AppData\Roaming\ReminderApp\credentials.jso
 <img width="1649" height="83" alt="{ACF3E5B6-9BC9-41D6-A040-C990F3A255DE}" src="https://github.com/user-attachments/assets/67a903ae-8e6d-417b-a637-8f9c970a74df" />
 
 
+並放入環境變數中
+
 
 ## 執行jar檔
 
